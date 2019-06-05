@@ -1,0 +1,32 @@
+<h3><a class="btn btn-secondary" href="/alumno"><i class="fa fa-plus"></i> Nuevo alumno</a> Lista de alumnos</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Numero de control</th>
+            <th>Nombre</th>
+            <th>Carrera</th>
+            <th>Seguro</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.ncontrol}}</td>
+            <td>{{this.nombre}}</td>
+            <td>{{this.carrera}}</td>
+            {{#if this.seguro}}
+            <td>{{this.seguro}}</td>
+            {{else}}
+            <td>Sin seguro</td>
+            {{/if}}
+            <td>
+                <a href="/alumno/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/alumno/delete/{{this._id}}"
+                    onclick="return confirm('Seguro quieres borrar este registo? ?');"><i class="fa fa-trash fa-lg"
+                        aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

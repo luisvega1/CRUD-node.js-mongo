@@ -1,0 +1,56 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/alumno" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{employee._id}}">
+    <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" class="form-control" name="nombre" placeholder="Nombre completo" value="{{employee.nombre}}">
+        <div class="text-danger">
+            {{employee.nombreError}}</div>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" name="email" placeholder="Email" value="{{employee.email}}">
+        <div class="text-danger">
+            {{employee.emailError}}</div>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputTipoDestino">Carrera</label>
+        </div>
+        <select class="custom-select" name="carrera" id="inputTipoDestino">
+            <option value="Licenciatura en Administración">Licenciatura en Administración</option>
+            <option value="Contador Público">Contador Público</option>
+            <option value="Ingeniería Industrial">Ingeniería Industrial</option>
+            <option value="Ingeniería Informática">Ingeniería Informática</option>
+            <option value="Ingeniería Bioquímica">Ingeniería Bioquímica</option>
+            <option value="Ingeniería Química">Ingeniería Química</option>
+            <option value="Licenciatura en Biología">Licenciatura en Biología</option>
+            <option value="Ingeniería en Gestión Empresarial">Ingeniería en Gestión Empresarial</option>
+            <option value="Ingeniería Mecatrónica">Ingeniería Mecatrónica</option>
+            <option value="Ingeniería Electrónica">Ingeniería Electrónica</option>
+            <option value="Arquitectura">Arquitectura</option>
+            <option value="Ingeniería en Industrias Alimentarias">Ingeniería en Industrias Alimentarias</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>No. Control</label>
+            <input type="text" minlength="8" maxlength="8" class="form-control" name="ncontrol"
+                placeholder="Número de control" value="{{employee.ncontrol}}">
+            <div class="text-danger">
+                {{employee.ncontrolError}}</div>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Seguro</label>
+            <input type="text" minlength="12" maxlength="12" class="form-control" name="seguro" placeholder="Seguro"
+                value="{{employee.seguro}}">
+            <div class="text-danger">
+                {{employee.seguroError}}</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Registrar</button>
+        <a class="btn btn-secondary" href="/alumno/list"><i class="fa fa-list-alt"></i> Ver todos</a>
+    </div>
+</form>
